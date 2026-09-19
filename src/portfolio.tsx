@@ -26,7 +26,10 @@ function App() {
 
     try {
       // Change this URL when your Spring Boot backend is ready
-      await axios.post("http://localhost:8080/api/contact", formData);
+      await axios.post(
+  `${import.meta.env.VITE_API_URL}/api/contact`,
+  formData
+);
 
       setStatus("Message sent successfully! I'll get back to you soon.");
 
