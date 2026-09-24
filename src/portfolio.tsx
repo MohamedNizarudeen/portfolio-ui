@@ -11,6 +11,7 @@ function App() {
   });
 
   const [status, setStatus] = useState("");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -25,7 +26,7 @@ function App() {
     e.preventDefault();
 
     try {
-      // Change this URL when your Spring Boot backend is ready
+      
       await axios.post(
   `${import.meta.env.VITE_API_URL}/api/contact`,
   formData
@@ -48,21 +49,25 @@ function App() {
     <div className="portfolio">
 
       {/* Header */}
-      <header className="header">
-        <div className="container nav-container">
-          <a href="#home" className="logo">
-            MN<span>.</span>
-          </a>
-
-          <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-          </nav>
-        </div>
-      </header>
+      <header className="header"> 
+        <div className="container nav-container"> 
+          <a href="#home" className="logo" onClick={() => setMenuOpen(false)} > MN<span>.</span> </a> 
+          {/* Desktop Navigation */} 
+          <nav className={`navbar ${menuOpen ? "active" : ""}`}> 
+            <a href="#home" onClick={() => setMenuOpen(false)}>Home</a> 
+            <a href="#about" onClick={() => setMenuOpen(false)}>About</a> 
+            <a href="#skills" onClick={() => setMenuOpen(false)}>Skills</a>
+             <a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a>
+              <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a> 
+              </nav> 
+              {/* Hamburger Button */} 
+              <button className={`hamburger ${menuOpen ? "active" : ""}`} onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation menu" aria-expanded={menuOpen} > 
+                <span></span> 
+                <span></span> 
+                <span></span> 
+                </button> 
+                </div> 
+                </header>
 
       {/* Hero */}
       <main>
