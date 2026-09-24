@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import axios from "axios";
+import Hero3D from "./Hero3D";
 import "./App.css";
 
 function App() {
@@ -72,40 +73,17 @@ function App() {
       {/* Hero */}
       <main>
 
-        <section id="home" className="hero">
-          <div className="container hero-content">
-
-            <div className="hero-text">
-              <p className="subtitle">Hello, I'm</p>
-
-              <h1>
-                Mohamed Nizarudeen
-              </h1>
-
-              <h2>
-                Full Stack Developer
-              </h2>
-
-              <p className="hero-description">
-                I build scalable web applications using React, Java,
-                Spring Boot and modern cloud technologies.
-              </p>
-
-              <div className="hero-buttons">
-                <a href="#projects" className="btn primary-btn">
-                  View Projects
-                </a>
-<a href="/Mohamed_Nizarudeen_Resume.pdf" download className="btn secondary-btn">
-    Download Resume
-  </a>
-                <a href="#contact" className="btn secondary-btn">
-                  Contact Me
-                </a>
-              </div>
-            </div>
-
-          </div>
-        </section>
+        <section id="home" className="hero"> 
+          <div className="container hero-content"> 
+            <div className="hero-text"> <p className="subtitle"> Hello, I'm </p> <h1> Mohamed Nizarudeen </h1>
+             <h2> Full Stack Developer </h2> 
+             <p className="hero-description"> I build scalable web applications using React, Java, Spring Boot and modern cloud technologies. </p>
+              <div className="hero-buttons"> 
+                <a href="#projects" className="btn primary-btn" > View Projects </a> 
+                <a href="/Mohamed_Nizarudeen_Resume.pdf" download className="btn secondary-btn" > Download Resume </a> 
+                <a href="#contact" className="btn secondary-btn" > Contact Me </a> </div> 
+                </div> {/* 3D Animation */} <Hero3D /> </div> 
+                </section>
 
         {/* About */}
         <section id="about" className="section">
